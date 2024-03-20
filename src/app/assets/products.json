@@ -1,0 +1,21 @@
+{
+  "products": [
+    {
+      "name": "Café Carbone Espresso 500g",
+      "description": "Empaque de 500g de café de nuestra línea clásica.\n\nCafé Arabica (Catuay Caturra) en grano o con la molienda de tu preferencia, cosechado en Venezuela a 1400 msnm.\n\n100% lavado. Tostado medio. Desarrolla un perfil en tasa de cuerpo elevado y acidez media.",
+      "price": 12,
+      "imageUrl": "https://carbonespresso.com/wp-content/uploads/2022/03/Carbonespresso_Clasico_V2.png.webp",
+      "tags": [],
+      "inCar": 0
+    },
+    {
+      "name": "Café Carbone Settecento 250g",
+      "description": "Café reposando en barricas de Ron Santa Teresa, tostado en pequeños lotes, haciendo de este, un producto exclusivo, único, inigualable.\n Sus notas dulces, especiadas, vino, cuero, y por supuesto, madera y barrica, llaman potentemente la atención, y al momento de molerlo, su fragancia no deja a nadie indiferente.\n\n Es un café que evoluciona con el paso del tiempo, se van acentuando sus notas, y mejorando su sabor.",
+      "price": 12,
+      "imageUrl": "https://carbonespresso.com/wp-content/uploads/2022/04/CarboneSettecento.png.webp",
+      "tags": [],
+      "inCar": 0
+    }
+  ]
+}
+
