@@ -9,7 +9,6 @@ export default function Shop() {
   let products: Product[] = productList.products
   const [product, SetProduct] = useState<Product>(products[0])
   const [render, SetRender] = useState<boolean>(false)
-  const [presentationIsSelected, SPresentation] = useState<boolean>(false)
 
   function SelectProduct(index: number) {
     SetProduct(products[index])
@@ -30,7 +29,6 @@ export default function Shop() {
 
   function SetPresentation(product: Product, data: string) {
     product.selectedPresentation = data
-    data == "" ? SPresentation(false) : SPresentation(true)
     SetRender(!render)
   }
 
@@ -63,7 +61,7 @@ export default function Shop() {
       <div className="w-full mt-5 text-gray-700 gap-5 flex flex-col">
         <h2 className="font-bold text-2xl">{product.name}</h2>
         <span className="font-light block whitespace-pre-wrap text-sm">{product.description}</span>
-        <span className="font-bold text-lg block">${product.price}</span>
+        <span className="font-bold text-lg block line-through text-gray-600">${product.price}</span>
         <div className="flex gap-4 items-center">
         <label className="text-sm">Presentación</label>
         <select value={product.selectedPresentation} onChange={(e) => SetPresentation(product, e.target.value)} className="border rounded-md bg-white text-gray-700 p-2 text-sm w-full sm:max-w-48">
@@ -75,7 +73,7 @@ export default function Shop() {
           }
         </select>
         </div>
-        <button disabled={ !presentationIsSelected  ? true : false } title={ presentationIsSelected ? "" : "Elige una presentación" } onClick={() => IncreaseCar(product)} className={`${ product.inCar > 0 ? "hidden" : "" } ${ presentationIsSelected ? "bg-neutral-700 sm:hover:max-w-48 hover:py-3 hover:shadow-lg" : "bg-neutral-500" } py-3 text-white text-sm rounded-md w-full sm:max-w-44 transition-all duration-200`}>Agregar al carrito</button>
+        <button disabled={ product.selectedPresentation == "" ? true : false } title={ product.selectedPresentation != "" ? "" : "Elige una presentación" } onClick={() => IncreaseCar(product)} className={`${ product.inCar > 0 ? "hidden" : "" } ${ product.selectedPresentation != "" ? "bg-neutral-700 sm:hover:max-w-48 hover:py-3 hover:shadow-lg" : "bg-neutral-500" } py-3 text-white text-sm rounded-md w-full sm:max-w-44 transition-all duration-200`}>Agregar al carrito</button>
 
 <div className={ product.inCar > 0 ? "" : "hidden" }>
   <div className="flex items-center gap-1 w-full justify-center sm:justify-start">
