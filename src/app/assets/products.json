@@ -7,7 +7,15 @@
       "price": 12,
       "imageUrl": "https://carbonespresso.com/wp-content/uploads/2022/03/Carbonespresso_Clasico_V2.png.webp",
       "tags": [],
-      "inCar": 0
+      "inCar": 0,
+      "presentation": [
+        "grano",
+        "molido estándar",
+        "molido para greca",
+        "molido para V60",
+        "molido para prensa"
+      ],
+      "selectedPresentation": ""
     },
     {
       "id": "settecento-250",
@@ -16,7 +24,15 @@
       "price": 12,
       "imageUrl": "https://carbonespresso.com/wp-content/uploads/2022/04/CarboneSettecento.png.webp",
       "tags": [],
-      "inCar": 0
+      "inCar": 0,
+      "presentation": [
+        "grano",
+        "molido estándar",
+        "molido para greca",
+        "molido para V60",
+        "molido para prensa"
+      ],
+      "selectedPresentation": ""
     }
   ]
 }
