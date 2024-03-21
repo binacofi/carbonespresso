@@ -18,7 +18,7 @@
         "molido para prensa"
       ],
       "selectedPresentation": "",
-      "discount": []
+      "discount": [0, 0.125, 0.2222222222, 0.3333333333]
     },
     {
       "id": "settecento-250",

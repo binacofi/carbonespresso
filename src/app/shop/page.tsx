@@ -17,13 +17,33 @@ export default function Shop() {
   useEffect(() => {
   }, [product, render])
 
+  function CalculatePrice(product: Product) {
+
+    product.totalPrice = product.price * product.inCar
+
+    let discountLength = product.discount.length
+
+      if (product.discount.length > 0) {
+
+        if (product.inCar <= discountLength) {
+          product.discountPrice = product.totalPrice - (product.totalPrice * product.discount[product.inCar - 1])
+        } else {
+          product.discountPrice = product.totalPrice - (product.totalPrice * product.discount[discountLength - 1])
+        }
+
+        product.discountPrice = Math.trunc(product.discountPrice)
+      } 
+  }
+
   function IncreaseCar(product: Product) {
     product.inCar++
+    CalculatePrice(product)
     SetRender(!render)
   }
 
   function DecreaseCar(product: Product) {
     product.inCar > 0 ? product.inCar-- : product.inCar = 0
+    CalculatePrice(product)
     SetRender(!render)
   }
 
@@ -61,7 +81,8 @@ export default function Shop() {
       <div className="w-full mt-5 text-gray-700 gap-5 flex flex-col">
         <h2 className="font-bold text-2xl">{product.name}</h2>
         <span className="font-light block whitespace-pre-wrap text-sm">{product.description}</span>
-        <span className="font-bold text-lg block line-through text-gray-600">${product.price}</span>
+        <span className={`${product.inCar == 0 ? "" : "hidden"} font-bold text-lg block text-gray-600`}>${product.price}</span>
+        <span className={`${product.inCar == 0 ? "hidden" : ""} font-bold text-lg block text-gray-600`}><span className={ product.discount.length > 0 && product.totalPrice != product.discountPrice ? "line-through font-normal" : "" }>${product.totalPrice}</span>{product.discount.length > 0 && product.totalPrice != product.discountPrice ? " - $" + product.discountPrice : ""}</span>
         <div className="flex gap-4 items-center">
         <label className="text-sm">Presentación</label>
         <select value={product.selectedPresentation} onChange={(e) => SetPresentation(product, e.target.value)} className="border rounded-md bg-white text-gray-700 p-2 text-sm w-full sm:max-w-48">
