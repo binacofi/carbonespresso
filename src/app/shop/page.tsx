@@ -1,14 +1,23 @@
 "use client"
-import type Product from "../pipes"
+import type { Product } from "../pipes"
+import { productToCar } from "../pipes"
 import productList from "../assets/products.json"
 import ProductBox from "../components/product-box"
 import { useEffect, useState } from "react"
+
+import {useAppDispatch, useAppSelector} from "../../lib/hooks"
+import {updateProductsState} from "../../lib/features/carSlice"
 
 export default function Shop() {
 
   let products: Product[] = productList.products
   const [product, SetProduct] = useState<Product>(products[0])
   const [render, SetRender] = useState<boolean>(false)
+
+  // Redux
+  const car = useAppSelector(state => state.carReducer)
+  const dispatch = useAppDispatch()
+
 
   function SelectProduct(index: number) {
     SetProduct(products[index])
@@ -38,6 +47,7 @@ export default function Shop() {
   function IncreaseCar(product: Product) {
     product.inCar++
     CalculatePrice(product)
+    dispatch(updateProductsState(productToCar(product)))
     SetRender(!render)
   }
 
