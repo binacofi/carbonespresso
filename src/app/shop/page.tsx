@@ -1,20 +1,21 @@
 "use client"
 import type Product from "../pipes"
-import productList from "../assets/products.json"
+// import productList from "../assets/products.json"
+import { Products } from "../global"
 import ProductBox from "../components/product-box"
 import { useEffect, useState } from "react"
 
 export default function Shop() {
 
-  let products: Product[] = productList.products
-  const [product, SetProduct] = useState<Product>(products[0])
+  const [product, SetProduct] = useState<Product>(Products[0])
   const [render, SetRender] = useState<boolean>(false)
 
   function SelectProduct(index: number) {
-    SetProduct(products[index])
+    SetProduct(Products[index])
   }
 
   useEffect(() => {
+    console.log(Products)
   }, [product, render])
 
   function CalculatePrice(product: Product) {
@@ -59,7 +60,7 @@ export default function Shop() {
         <div className="flex-row w-full flex">
           <div className="hidden flex-col gap-5 p-0 justify-center content-center w-full align-center items-center md:flex">
           {
-          products.map((p: Product, index: number) => {
+          Products.map((p: Product, index: number) => {
 
             return <button key={p.id} onClick={() => SelectProduct(index)}><ProductBox alt="product item" imgSrc={p.imageUrl}/></button>
           })
@@ -71,7 +72,7 @@ export default function Shop() {
         </div>
         <div className="flex flex-row md:hidden gap-5 justify-center h-44">
           {
-          products.map((p: Product, index: number) => {
+          Products.map((p: Product, index: number) => {
 
             return <button key={p.id} onClick={() => SelectProduct(index)}><ProductBox alt="product item" imgSrc={p.imageUrl}/></button>
           })
