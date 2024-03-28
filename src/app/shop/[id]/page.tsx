@@ -2,20 +2,28 @@
 import type Product from "../../pipes"
 // import productList from "../assets/products.json"
 import { Products } from "../../global"
-import ProductBox from "../../components/product-box"
 import { useEffect, useState } from "react"
+import {useParams} from "next/navigation"
 
 export default function Product() {
 
+  const params = useParams<{id: string}>()
+  
   const [product, SetProduct] = useState<Product>(Products[0])
   const [render, SetRender] = useState<boolean>(false)
 
-  function SelectProduct(index: number) {
-    SetProduct(Products[index])
-  }
 
   useEffect(() => {
-  }, [product, render])
+
+
+    Products.map((p: Product) => {
+
+      if (p.id == params.id) {
+        SetProduct(p)
+      }
+
+    })
+  }, [render])
 
   function CalculatePrice(product: Product) {
 
@@ -57,25 +65,9 @@ export default function Product() {
     <div className="w-full flex flex-col lg:flex-row p-10 mt-10">
       <div className="flex flex-col w-full">
         <div className="flex-row w-full flex">
-          <div className="hidden flex-col gap-5 p-0 justify-center content-center w-full align-center items-center md:flex">
-          {
-          Products.map((p: Product, index: number) => {
-
-            return <button key={p.id} onClick={() => SelectProduct(index)}><ProductBox alt="product item" imgSrc={p.imageUrl}/></button>
-          })
-          }
-          </div>
           <div className="flex justify-center md:justify-end align-center content-center items-center w-full">
             <img src={product.imageUrl} alt="product image" className="drop-shadow-xl max-w-sm" />
           </div>
-        </div>
-        <div className="flex flex-row md:hidden gap-5 justify-center h-44">
-          {
-          Products.map((p: Product, index: number) => {
-
-            return <button key={p.id} onClick={() => SelectProduct(index)}><ProductBox alt="product item" imgSrc={p.imageUrl}/></button>
-          })
-          }
         </div>
       </div> 
       <div className="w-full mt-5 text-gray-700 gap-5 flex flex-col">
