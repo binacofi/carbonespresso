@@ -8,6 +8,16 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        navbar: "#806240",
+        footer: "#33302D",
+        titles: "#25221F",
+        white: "#FEFEFE",
+        gray: "#EEEEEE",
+        black: "#191919",
+        button: "#9D6D36",
+        whatsapp: "#3ED677"
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
