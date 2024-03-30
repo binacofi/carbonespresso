@@ -62,7 +62,7 @@ export default function Product() {
   return(
     <>
     <div className="p-10">
-      <h2 className="text-titles text-2xl sm:text-3xl font-bold">{product.name}</h2>
+      <h2 className="text-footer text-2xl sm:text-3xl font-bold">{product.name}</h2>
       <div className="w-full flex flex-col md:flex-row mt-10">
         <div className="flex flex-col md:w-2/4">
           <div className="flex-row w-full flex">
