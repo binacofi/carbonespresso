@@ -4,8 +4,6 @@ import ProductCard from "../components/product-card"
 import Link from "next/link"
 
 export default function Shop() {
-  
-  const product: Product = Products[0]
 
   return(
   <>
