@@ -9,7 +9,8 @@
       "discountPrice": 0,
       "imageUrl": "https://carbonespresso.com/wp-content/uploads/2022/03/Carbonespresso_Clasico_V2.png.webp",
       "tags": [],
-      "inCar": 0,
+      "inCar": false,
+      "quantity": 1,
       "presentation": [
         "grano",
         "molido estándar",
@@ -29,7 +30,8 @@
       "discountPrice": 0,
       "imageUrl": "https://carbonespresso.com/wp-content/uploads/2022/04/CarboneSettecento.png.webp",
       "tags": [],
-      "inCar": 0,
+      "inCar": false,
+      "quantity": 1,
       "presentation": [
         "grano",
         "molido estándar",

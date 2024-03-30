@@ -13,7 +13,7 @@ const config: Config = {
         footer: "#33302D",
         titles: "#25221F",
         white: "#FEFEFE",
-        gray: "#EEEEEE",
+        ngray: "#EEEEEE",
         black: "#191919",
         button: "#9D6D36",
         whatsapp: "#3ED677"

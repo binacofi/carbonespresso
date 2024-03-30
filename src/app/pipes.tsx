@@ -6,7 +6,8 @@ export default interface Product {
   totalPrice: number;
   discountPrice: number;
   tags: string[];
-  inCar: number;
+  inCar: boolean;
+  quantity: number;
   imageUrl: string;
   presentation: string[];
   selectedPresentation: string;

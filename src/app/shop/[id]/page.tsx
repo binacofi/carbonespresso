@@ -25,16 +25,16 @@ export default function Product() {
     })
   }, [render])
 
-  function CalculatePrice(product: Product) {
+  function CalculatePrice() {
 
-    product.totalPrice = product.price * product.inCar
+    product.totalPrice = product.price * product.quantity
 
     let discountLength = product.discount.length
 
       if (product.discount.length > 0) {
 
-        if (product.inCar <= discountLength) {
-          product.discountPrice = product.totalPrice - (product.totalPrice * product.discount[product.inCar - 1])
+        if (product.quantity <= discountLength) {
+          product.discountPrice = product.totalPrice - (product.totalPrice * product.discount[product.quantity- 1])
         } else {
           product.discountPrice = product.totalPrice - (product.totalPrice * product.discount[discountLength - 1])
         }
@@ -43,15 +43,13 @@ export default function Product() {
       } 
   }
 
-  function IncreaseCar(product: Product) {
-    product.inCar++
-    CalculatePrice(product)
-    SetRender(!render)
+  function AddToCar() {
+    product.inCar = true
   }
 
-  function DecreaseCar(product: Product) {
-    product.inCar > 0 ? product.inCar-- : product.inCar = 0
-    CalculatePrice(product)
+  function SetQuantity(n: number) {
+    product.quantity = n
+    CalculatePrice()
     SetRender(!render)
   }
 
@@ -62,54 +60,40 @@ export default function Product() {
 
   return(
     <>
-    <div className="w-full flex flex-col lg:flex-row p-10 mt-10">
-      <div className="flex flex-col w-full">
-        <div className="flex-row w-full flex">
-          <div className="flex justify-center md:justify-end align-center content-center items-center w-full">
-            <img src={product.imageUrl} alt="product image" className="drop-shadow-xl max-w-sm" />
+    <div className="p-10">
+      <h2 className="text-titles text-2xl sm:text-3xl font-bold">{product.name}</h2>
+      <div className="w-full flex flex-col md:flex-row mt-10">
+        <div className="flex flex-col md:w-2/4">
+          <div className="flex-row w-full flex">
+            <div className="flex justify-center md:justify-end align-center content-center items-center w-full">
+              <img src={product.imageUrl} alt="product image" className="drop-shadow-xl max-w-sm" />
+            </div>
           </div>
-        </div>
-      </div> 
-      <div className="w-full mt-5 text-gray-700 gap-5 flex flex-col">
-        <h2 className="font-bold text-2xl">{product.name}</h2>
-        <span className="font-light block whitespace-pre-wrap text-sm">{product.description}</span>
-        <span className={`${product.inCar == 0 ? "" : "hidden"} font-bold text-lg block text-gray-600`}>${product.price}</span>
-        <span className={`${product.inCar == 0 ? "hidden" : ""} font-bold text-lg block text-gray-600`}><span className={ product.discount.length > 0 && product.totalPrice != product.discountPrice ? "line-through font-normal" : "" }>${product.totalPrice}</span>{product.discount.length > 0 && product.totalPrice != product.discountPrice ? " - $" + product.discountPrice : ""}</span>
-        <div className="flex gap-4 items-center">
-        <label className="text-sm">Presentación</label>
-        <select value={product.selectedPresentation} onChange={(e) => SetPresentation(product, e.target.value)} className="border rounded-md bg-white text-gray-700 p-2 text-sm w-full sm:max-w-48">
-          <option value="">Elige una opcion</option>
-          {
-            product.presentation.map((p: string, index: number) => {
-                return <option key={`presentation-` + index} value={p}>{p}</option> 
-            })
-          }
-        </select>
-        </div>
-        <button disabled={ product.selectedPresentation == "" ? true : false } title={ product.selectedPresentation != "" ? "" : "Elige una presentación" } onClick={() => IncreaseCar(product)} className={`${ product.inCar > 0 ? "hidden" : "" } ${ product.selectedPresentation != "" ? "bg-neutral-700 sm:hover:max-w-48 hover:py-3 hover:shadow-lg" : "bg-neutral-500" } py-3 text-white text-sm rounded-md w-full sm:max-w-44 transition-all duration-200`}>Agregar al carrito</button>
-
-<div className={ product.inCar > 0 ? "" : "hidden" }>
-  <div className="flex items-center gap-1 w-full justify-center sm:justify-start">
-    <button type="button" onClick={() => DecreaseCar(product)}  className="size-10 leading-10 text-gray-600 transition hover:opacity-75">
-      -
-    </button>
-
-    <input
-      type="number"
-      id="Quantity"
-      value={product.inCar}
-      contentEditable="false"
-      className="h-10 w-16 rounded-md border-2 text-center [-moz-appearance:_textfield] sm:text-sm [&::-webkit-inner-spin-button]:m-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:m-0 [&::-webkit-outer-spin-button]:appearance-none"
-    />
-
-    <button type="button" onClick={() => IncreaseCar(product)} className="size-10 leading-10 text-gray-600 transition hover:opacity-75">
-      +
-    </button>
-  </div>
-</div>
+        </div> 
+        <div className="w-full mt-5 text-gray-700 gap-5 flex flex-col">
+          <span className={`${product.quantity <= 1 ? "" : "hidden"} font-bold text-2xl block text-navbar`}>${product.price}</span>
+          <span className={`${product.quantity <= 1 ? "hidden" : ""} font-bold text-2xl block text-navbar`}><span className={ product.discount.length > 0 && product.totalPrice != product.discountPrice ? "line-through font-normal" : "" }>${product.totalPrice}</span>{product.discount.length > 0 && product.totalPrice != product.discountPrice ? " - $" + product.discountPrice : ""}</span>
+          <span className="font-light block whitespace-pre-wrap text-sm">{product.description}</span>
+          <div className="flex gap-4 items-center">
+          <label className="text-sm">Presentación</label>
+          <select value={product.selectedPresentation} onChange={(e) => SetPresentation(product, e.target.value)} className="border rounded-md bg-white text-gray-700 p-2 text-sm w-full max-w-48">
+            <option value="">Elige una opcion</option>
+            {
+              product.presentation.map((p: string, index: number) => {
+                  return <option key={`presentation-` + index} value={p}>{p}</option> 
+              })
+            }
+          </select>
+          </div>
+          <div className="flex flex-row gap-4 w-full">
+            <input onChange={ e => SetQuantity(Number(e.target.value))} className="max-w-16 px-2 py-2 text-footer border rounded" type="number" defaultValue={product.quantity} min="1"></input>
+            <button className={`text-white bg-button rounded py-2 px-5 align-center transition-all duration-200 hover:shadow-xl w-full max-w-48`}>Agregar al carrito</button>
+          </div>
 
       </div>
     </div>
-    </>
+
+    </div>
+        </>
   )
 }

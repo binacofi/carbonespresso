@@ -13,14 +13,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body className="">
+      <body className="bg-ngray">
         {children}
-        <style>{`
-        body {
-          background-color: #eeeeee;
-        }
-        `}
-      </style>
       </body>
     </html>
   );
