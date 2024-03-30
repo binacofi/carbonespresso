@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Navbar from "./components/navbar";
 
 export const metadata: Metadata = {
   title: "Carbonespresso",
@@ -13,6 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
+      <Navbar/>
       <body className="bg-ngray">
         {children}
       </body>
