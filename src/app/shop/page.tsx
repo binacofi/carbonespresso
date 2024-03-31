@@ -2,6 +2,7 @@
 import { Products } from "../global"
 import type { Product } from "../pipes"
 import Link from "next/link"
+import ProductCard from "../components/product-card"
 
 export default function Shop() {
 
