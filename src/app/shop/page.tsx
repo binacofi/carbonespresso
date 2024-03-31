@@ -1,6 +1,6 @@
-import type Product from "../pipes"
+"use client"
 import { Products } from "../global"
-import ProductCard from "../components/product-card"
+import type { Product } from "../pipes"
 import Link from "next/link"
 
 export default function Shop() {
