@@ -2,7 +2,8 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-  <main id="banner" className="flex flex-col justify-center text-center py-20 px-5 w-full text-footer gap-4">
+  <main id="home">
+    <div id="home-banner" className="flex flex-col justify-center text-center py-20 px-5 w-full text-footer gap-4">
     <h1 className="text-4xl font-bold text-footer">Propuesta para tienda online</h1>
     <h2 className="text-xl font-medium text-navbar">Carbonespresso</h2>
     <span className="mt-10 block font-medium text-sm">Construído por <a className="font-medium hover:underline text-sky-600 hover:cursor-pointer">eltercercaféweb</a>{` <eltercercafe@gmail.com>`}</span>
@@ -14,12 +15,13 @@ export default function Home() {
     <path d="M243.151 527.751C239.225 527.757 235.356 526.82 231.868 525.017C108.034 460.969 85.4938 188.345 83.3261 157.455C82.9343 150.974 85.1165 144.601 89.3981 139.722C93.6797 134.842 99.7142 131.849 106.19 131.395C112.666 130.94 119.06 133.061 123.982 137.295C128.903 141.529 131.953 147.534 132.471 154.006C137.841 230.371 170.259 437.69 254.507 481.242C259.41 483.782 263.318 487.895 265.604 492.921C267.889 497.948 268.42 503.597 267.11 508.961C265.8 514.325 262.726 519.093 258.381 522.501C254.036 525.908 248.673 527.758 243.151 527.751Z" fill="#191919"/>
     <path d="M581.516 263.103L574.083 253.925C578.962 215.609 600.331 183.042 644.339 183.042C673.301 183.042 698.569 197.391 711.276 218.437C717.878 229.371 721.09 242.112 719.668 255.588C717.242 278.582 695.121 307.633 674.259 320.408C700.535 335.006 716.401 361.644 713.204 391.938C708.352 437.926 662.116 474.783 610.23 474.783C559.169 474.783 507.554 458.983 510.141 414.828L524.611 388.768C523.565 418.326 578.468 449.243 612.925 449.243C648.631 449.243 680.004 423.329 683.315 391.949C686.626 360.57 662.011 320.028 626.305 320.028L626.258 319.89C654.485 319.89 687.575 280.416 690.193 255.6C692.812 230.784 672.507 210.709 644.28 210.709C616.052 210.709 581.771 237.283 578.779 261.737L581.516 263.103Z" fill="#191919" stroke="#191919" stroke-width="17.528" stroke-linecap="square" stroke-linejoin="round"/>
     </svg>
-    x
+    + 
     <img src="https://carbonespresso.com/wp-content/uploads/2022/03/CarbonespresoGreka.png.webp" width="20" height="30" />
     </div>
     <div className="mt-10 flex flex-col gap-4 md:flex-row items-center justify-center text-white">
-      <Link className="bg-button hover:bg-button p-2 rounded-sm w-full font-light max-w-48 hover:shadow-lg transition-all duartion-100" href="/shop">Ir a demo</Link> 
+      <Link className="bg-navbar hover:bg-button p-2 rounded-sm w-full font-light max-w-48 hover:shadow-lg transition-all duartion-100" href="/shop">Ir a demo</Link> 
       <a className="bg-green-500 hover:bg-whatsapp p-2 rounded-sm w-full font-light max-w-48 hover:shadow-lg transition-all duartion-100" href="#">Contáctanos</a> 
+    </div>
     </div>
   </main>
   );

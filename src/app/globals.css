@@ -1,4 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+/*  */
+/* #home { */
+/*   background-image: url(https://carbonespresso.com/wp-content/uploads/2022/03/ws_Coffee_Grains_1920x1200.jpeg); */
+/*   background-position: center; */
+/*   background-size: cover; */
+/* } */
+/*  */
+/* #home-banner { */
+/*   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1440' height='400' preserveAspectRatio='none' viewBox='0 0 1440 400'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1128%26quot%3b)' fill='none'%3e%3crect width='1440' height='400' x='0' y='0' fill='rgba(238%2c 238%2c 238%2c 0.49)'%3e%3c/rect%3e%3cpath d='M 0%2c57 C 96%2c65.2 288%2c109 480%2c98 C 672%2c87 768%2c-0.8 960%2c2 C 1152%2c4.8 1344%2c90 1440%2c112L1440 400L0 400z' fill='rgba(128%2c 98%2c 64%2c 0.47)'%3e%3c/path%3e%3cpath d='M 0%2c241 C 57.6%2c223.6 172.8%2c162 288%2c154 C 403.2%2c146 460.8%2c193.4 576%2c201 C 691.2%2c208.6 748.8%2c185 864%2c192 C 979.2%2c199 1036.8%2c237.6 1152%2c236 C 1267.2%2c234.4 1382.4%2c194.4 1440%2c184L1440 400L0 400z' fill='rgba(157%2c 109%2c 54%2c 0.51)'%3e%3c/path%3e%3cpath d='M 0%2c301 C 96%2c311.2 288%2c352.4 480%2c352 C 672%2c351.6 768%2c300 960%2c299 C 1152%2c298 1344%2c337.4 1440%2c347L1440 400L0 400z' fill='rgba(254%2c 254%2c 254%2c 1)'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1128'%3e%3crect width='1440' height='400' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e"); */
+/*   background-position: center; */
+/*   background-size: cover; */
+/* } */
