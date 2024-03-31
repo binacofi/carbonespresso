@@ -1,7 +1,7 @@
 "use client"
 export default function WhatsappButton() {
   return(
-    <a href="#" target="_blank" className="fixed right-10 bottom-10">
+    <a href="https://wa.me/584245434188" target="_blank" className="fixed right-10 bottom-10">
 <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 64 64" fill="none">
   <g clip-path="url(#clip0_14_454)">
     <g filter="url(#filter0_d_14_454)">
