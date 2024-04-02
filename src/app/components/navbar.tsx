@@ -24,12 +24,12 @@ export default function Navbar() {
         </Link>
         </div>
         <ul className="flex gap-8 items-center">
-          <li><Link href="/shop">Tienda</Link></li>
-          <li><Link href="/">Cursos</Link></li>
-          <li><Link href="/">Esquinas</Link></li>
-          <li><Link href="/">Servicio</Link></li>
-          <li><Link href="/">Sobre carbone</Link></li>
-          <li><Link href="/">Mi carrito</Link></li>
+          <li><Link href="/tienda">Tienda</Link></li>
+          <li><Link href="/cursos">Cursos</Link></li>
+          <li><Link href="/esquinas">Esquinas</Link></li>
+          <li><Link href="/servicio">Servicio</Link></li>
+          <li><Link href="/carbone">Sobre carbone</Link></li>
+          <li><Link href="/carrito">Mi carrito</Link></li>
         </ul>
       </div>
     </header>

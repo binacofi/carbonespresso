@@ -17,7 +17,7 @@ export default function Shop() {
       <div className="flex sm:flex-row flex-col gap-14 justify-center items-center align-center mt-16">
       { Products.map((product: Product) => {
         
-        return <Link href={`/shop/${product.id}`}> <ProductCard key={product.id} product={product} /></Link>
+        return <Link href={`/tienda/${product.id}`}> <ProductCard key={product.id} product={product} /></Link>
       })}
       </div>
     </div>

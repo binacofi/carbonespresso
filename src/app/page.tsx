@@ -13,7 +13,7 @@ export default function Home() {
         <span><a className="underline text-sky-400 font-normal" href="https://wa.me/573152268206" target="_blank">+573152268206</a></span>
         <p className="mt-3"><span className="font-bold">Instagram: </span>@eltercercafeweb</p>
       </div>
-      <Link href="/shop" className="w-full flex justify-center mt-10">
+      <Link href="/tienda" className="w-full flex justify-center mt-10">
         <div className="w-full flex h-80 hover:shadow-lg transition-all duration-200 rounded mt-5 items-center justify-center" id="demo-view">
           <span className="text-gray-600 text-xl font-bold drop-shadow-lg">Ir a la demo</span> 
         </div>
