@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function Navbar() {
   return(
   <>
-    <header className="w-full px-16 py-3 bg-navbar text-white hidden md:block">
+    <header className="w-full fixed z-10 top-0 px-16 py-3 bg-navbar text-white hidden md:block">
       <div className="flex flex-row w-full justify-between">
         <div>
         <Link href="/">
