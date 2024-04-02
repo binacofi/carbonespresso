@@ -1,9 +1,36 @@
 "use client"
 import Link from "next/link";
+import {useState} from "react";
 
 export default function Navbar() {
+
+  const [isMobileOpen, SetMobileOpen] = useState<boolean>(false)
+  const manageMenu = () => {
+    SetMobileOpen(!isMobileOpen)
+  }
   return(
   <>
+    <header className="w-full fixed z-20 top-0 p-3 bg-navbar text-white md:hidden flex flex-row justify-end items-center">
+      <button onClick={manageMenu}>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" className="bi bi-list" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+      </svg>
+      </button>
+    </header>
+    <div className={`h-screen bg-ngray fixed w-full z-10 top-0 ${isMobileOpen ? "" : "hidden"}`}>
+      <ul className="w-full flex flex-col gap-0 mt-12 text-footer">
+        <li onClick={manageMenu} className="w-full p-3 hover:bg-white bg-white font-medium"><Link href="/">Inicio</Link></li>
+        <li onClick={manageMenu} className="w-full p-3 hover:bg-white"><Link href="/tienda">Tienda</Link></li>
+        <li onClick={manageMenu} className="w-full p-3 hover:bg-white"><Link href="/cursos">Cursos</Link></li>
+        <li onClick={manageMenu} className="w-full p-3 hover:bg-white"><Link href="/esquinas">Esquinas</Link></li>
+        <li onClick={manageMenu} className="w-full p-3 hover:bg-white"><Link href="/servicio">Servicio</Link></li>
+        <li onClick={manageMenu} className="w-full p-3 hover:bg-white"><Link href="/carbone">Sobre Carbone</Link></li>
+        <li onClick={manageMenu} className="w-full p-3 hover:bg-white"><Link href="/carrito">Mi Carrito</Link></li>
+      </ul>
+      <div className="w-full justify-center flex mt-24">
+        <img src="https://carbonespresso.com/wp-content/uploads/2022/03/CarbonespresoGreka.png.webp" width="20"></img>
+      </div>
+    </div>
     <header className="w-full fixed z-10 top-0 px-16 py-3 bg-navbar text-white hidden md:block">
       <div className="flex flex-row w-full justify-between">
         <div>

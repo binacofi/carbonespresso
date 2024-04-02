@@ -6,7 +6,7 @@ export default function NotFound() {
   return(
     <div>
     <Navbar/>
-    <div className="w-full flex flex-col h-screen gap-5 justify-center items-center p-10 ">
+    <div className="w-full text-center flex flex-col h-screen gap-5 justify-center items-center p-10 ">
     <h1 className="text-5xl text-footer font-bold">Error 404</h1>
     <h2 className="text-xl">Esta página no existe o no ha sido desarrollada</h2>
     </div>
