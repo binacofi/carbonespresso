@@ -19,13 +19,13 @@ export default function Navbar() {
     </header>
     <div className={`h-screen bg-ngray fixed w-full z-10 top-0 ${isMobileOpen ? "" : "hidden"}`}>
       <ul className="w-full flex flex-col gap-0 mt-12 text-footer">
-        <li onClick={manageMenu} className="w-full p-3 hover:bg-white bg-white font-medium"><Link href="/">Inicio</Link></li>
-        <li onClick={manageMenu} className="w-full p-3 hover:bg-white"><Link href="/tienda">Tienda</Link></li>
-        <li onClick={manageMenu} className="w-full p-3 hover:bg-white"><Link href="/cursos">Cursos</Link></li>
-        <li onClick={manageMenu} className="w-full p-3 hover:bg-white"><Link href="/esquinas">Esquinas</Link></li>
-        <li onClick={manageMenu} className="w-full p-3 hover:bg-white"><Link href="/servicio">Servicio</Link></li>
-        <li onClick={manageMenu} className="w-full p-3 hover:bg-white"><Link href="/carbone">Sobre Carbone</Link></li>
-        <li onClick={manageMenu} className="w-full p-3 hover:bg-white"><Link href="/carrito">Mi Carrito</Link></li>
+        <li onClick={manageMenu} className="hover:bg-white bg-white font-medium"><Link className="w-full p-3 block" href="/">Inicio</Link></li>
+        <li onClick={manageMenu} className="hover:bg-white hover:font-medium"><Link className="w-full p-3 block" href="/tienda">Tienda</Link></li>
+        <li onClick={manageMenu} className="hover:bg-white hover:font-medium"><Link className="w-full p-3 block" href="/cursos">Cursos</Link></li>
+        <li onClick={manageMenu} className="hover:bg-white hover:font-medium"><Link className="w-full p-3 block" href="/esquinas">Esquinas</Link></li>
+        <li onClick={manageMenu} className="hover:bg-white hover:font-medium"><Link className="w-full p-3 block" href="/servicio">Servicio</Link></li>
+        <li onClick={manageMenu} className="hover:bg-white hover:font-medium"><Link className="w-full p-3 block" href="/carbone">Sobre Carbone</Link></li>
+        <li onClick={manageMenu} className="hover:bg-white hover:font-medium"><Link className="w-full p-3 block" href="/carrito">Mi Carrito</Link></li>
       </ul>
       <div className="w-full justify-center flex mt-24">
         <img src="https://carbonespresso.com/wp-content/uploads/2022/03/CarbonespresoGreka.png.webp" width="20"></img>
