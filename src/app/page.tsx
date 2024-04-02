@@ -2,26 +2,29 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-  <main id="home">
-    <div id="home-banner" className="flex flex-col justify-center text-center py-20 px-5 w-full text-footer gap-4">
-    <h1 className="text-4xl font-bold text-footer">Propuesta para tienda online</h1>
-    <h2 className="text-xl font-medium text-navbar">Carbonespresso</h2>
-    <span className="mt-10 block font-medium text-sm">Construído por <a className="font-medium hover:underline text-sky-600 hover:cursor-pointer">eltercercaféweb</a>{` <eltercercafe@gmail.com>`}</span>
-    <div className="flex w-full justify-center items-center gap-3">
-    <svg width="30" height="50" viewBox="0 0 800 612" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M346.687 243.648C218.246 243.648 80 211.797 80 141.812C80 71.8269 218.246 40 346.687 40C475.128 40 613.373 71.8515 613.373 141.812C613.373 211.772 475.03 243.648 346.687 243.648ZM346.687 89.2678C204.032 89.2678 129.268 128.312 129.268 141.812C129.268 155.311 204.032 194.381 346.687 194.381C489.342 194.381 564.105 155.336 564.105 141.812C564.105 128.288 489.366 89.2678 346.687 89.2678Z" fill="#191919"/>
-    <path d="M346.687 571.746C230.465 571.746 217.926 525.878 217.926 506.147L267.193 505.53C268.795 508.979 287.517 522.479 346.687 522.479C407.238 522.479 424.974 508.314 426.723 502.771L473.675 517.7C462.294 553.591 419.579 571.746 346.687 571.746Z" fill="#191919"/>
-    <path d="M450.248 527.751C444.726 527.758 439.363 525.908 435.018 522.501C430.673 519.093 427.598 514.325 426.288 508.961C424.978 503.597 425.509 497.948 427.795 492.921C430.08 487.895 433.988 483.782 438.892 481.242C523.287 437.616 555.607 230.248 560.928 154.006C561.445 147.534 564.496 141.529 569.417 137.295C574.338 133.061 580.732 130.94 587.208 131.395C593.684 131.849 599.719 134.842 604.001 139.722C608.282 144.601 610.464 150.974 610.073 157.455C607.929 188.345 585.439 460.969 461.53 525.017C458.043 526.82 454.173 527.757 450.248 527.751Z" fill="#191919"/>
-    <path d="M243.151 527.751C239.225 527.757 235.356 526.82 231.868 525.017C108.034 460.969 85.4938 188.345 83.3261 157.455C82.9343 150.974 85.1165 144.601 89.3981 139.722C93.6797 134.842 99.7142 131.849 106.19 131.395C112.666 130.94 119.06 133.061 123.982 137.295C128.903 141.529 131.953 147.534 132.471 154.006C137.841 230.371 170.259 437.69 254.507 481.242C259.41 483.782 263.318 487.895 265.604 492.921C267.889 497.948 268.42 503.597 267.11 508.961C265.8 514.325 262.726 519.093 258.381 522.501C254.036 525.908 248.673 527.758 243.151 527.751Z" fill="#191919"/>
-    <path d="M581.516 263.103L574.083 253.925C578.962 215.609 600.331 183.042 644.339 183.042C673.301 183.042 698.569 197.391 711.276 218.437C717.878 229.371 721.09 242.112 719.668 255.588C717.242 278.582 695.121 307.633 674.259 320.408C700.535 335.006 716.401 361.644 713.204 391.938C708.352 437.926 662.116 474.783 610.23 474.783C559.169 474.783 507.554 458.983 510.141 414.828L524.611 388.768C523.565 418.326 578.468 449.243 612.925 449.243C648.631 449.243 680.004 423.329 683.315 391.949C686.626 360.57 662.011 320.028 626.305 320.028L626.258 319.89C654.485 319.89 687.575 280.416 690.193 255.6C692.812 230.784 672.507 210.709 644.28 210.709C616.052 210.709 581.771 237.283 578.779 261.737L581.516 263.103Z" fill="#191919" stroke="#191919" stroke-width="17.528" stroke-linecap="square" stroke-linejoin="round"/>
-    </svg>
-    + 
-    <img src="https://carbonespresso.com/wp-content/uploads/2022/03/CarbonespresoGreka.png.webp" width="20" height="30" />
-    </div>
-    <div className="mt-10 flex flex-col gap-4 md:flex-row items-center justify-center text-white">
-      <Link className="bg-navbar hover:bg-button p-2 rounded-sm w-full font-light max-w-48 hover:shadow-lg transition-all duartion-100" href="/shop">Ir a demo</Link> 
-      <a className="bg-green-500 hover:bg-whatsapp p-2 rounded-sm w-full font-light max-w-48 hover:shadow-lg transition-all duartion-100" href="#">Contáctanos</a> 
-    </div>
+  <main id="home" className="w-full flex justify-center">
+    <div className="flex flex-col justify-center text-center py-20 px-10 sm:px-20 w-full bg-white/80 backdrop-blur-sm max-w-4xl text-footer gap-4 shadow">
+      <h1 className="text-3xl font-bold text-gray-700">Propuesta para tienda online</h1>
+      <h2 className="text-xl font-normal text-button">Carbonespresso</h2>
+      <p className="mt-5 text-gray-600 font-light text-sm">Construído por <a href="#" className="text-sky-400 underline font-medium italic">El tercer café</a>{` <eltercercafe@gmail.com>`}</p>
+      <div className="flex flex-col gap-2 text-sm text-gray-600">
+        <span className="font-bold">Whatsapp</span>
+        <span><a className="underline text-sky-400 font-normal" href="https://wa.me/58424544188" target="_blank">+58424544188</a></span>
+        <span><a className="underline text-sky-400 font-normal" href="https://wa.me/573152268206" target="_blank">+573152268206</a></span>
+        <p className="mt-3"><span className="font-bold">Instagram: </span>@eltercercafeweb</p>
+      </div>
+      <Link href="/shop" className="w-full flex justify-center mt-10">
+        <div className="w-full flex h-80 hover:shadow-lg transition-all duration-200 rounded mt-5 items-center justify-center" id="demo-view">
+          <span className="text-gray-600 text-xl font-bold drop-shadow-lg">Ir a la demo</span> 
+        </div>
+      </Link>
+      <div className="mt-5">
+        <p>Somos El Tercer Café, diseñamos y desarrollamos software orientado a la web y queremos ofrecerte una nueva tienda virtual. Hemos visto el potencial de su marca y hemos preparado esta demo. </p>
+        <p className="mt-5">Anímate a ser uno de nuestros primeros clientes ¡Tenemos un precio especial para tí!</p>
+      </div>
+      <div className="mt-10 flex flex-col gap-4 md:flex-row items-center justify-center text-white">
+        <a className="hidden bg-green-500 hover:bg-whatsapp p-2 rounded-sm w-full font-normal text-sm max-w-48 hover:shadow-lg transition-all duartion-100" href="" target="_blank">Contáctanos</a> 
+      </div>
     </div>
   </main>
   );

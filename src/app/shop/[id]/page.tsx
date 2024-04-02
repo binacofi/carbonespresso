@@ -4,6 +4,9 @@ import type Product from "../../pipes"
 import { Products } from "../../global"
 import { useEffect, useState } from "react"
 import {useParams} from "next/navigation"
+import Navbar from "@/app/components/navbar"
+import Footer from "@/app/components/footer"
+import WhatsappButton from "@/app/components/whatsapp"
 
 export default function Product() {
 
@@ -61,6 +64,7 @@ export default function Product() {
 
   return(
     <>
+    <Navbar/>
     <div className="p-10">
       <h2 className="text-footer text-2xl sm:text-3xl font-bold">{product.name}</h2>
       <div className="w-full flex flex-col md:flex-row mt-10">
@@ -95,6 +99,8 @@ export default function Product() {
     </div>
 
     </div>
+    <WhatsappButton/>
+    <Footer/>
         </>
   )
 }

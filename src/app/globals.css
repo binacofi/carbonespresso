@@ -8,6 +8,22 @@ body {
   font-weight: 100;
   font-style: normal;
 }
+
+
+#home {
+  background-image: url("/pattern.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+#demo-view {
+  background-image: linear-gradient(to right bottom, rgba(254,254,254,0.1),rgba(238, 238, 238,0.)), url("/ss.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 /*  */
 /* #home { */
 /*   background-image: url(https://carbonespresso.com/wp-content/uploads/2022/03/ws_Coffee_Grains_1920x1200.jpeg); */
