@@ -7,11 +7,13 @@ import {useParams} from "next/navigation"
 import Navbar from "@/app/components/navbar"
 import Footer from "@/app/components/footer"
 import WhatsappButton from "@/app/components/whatsapp"
+import Link from "next/link"
 
 export default function Product() {
 
   const params = useParams<{id: string}>()
-  
+
+  const [notFound, SetNotFound] = useState<boolean>(true)
   
   const [product, SetProduct] = useState<Product>(Products[0])
   const [render, SetRender] = useState<boolean>(false)
@@ -19,11 +21,11 @@ export default function Product() {
 
   useEffect(() => {
 
-
     Products.map((p: Product) => {
 
       if (p.id == params.id) {
         SetProduct(p)
+        SetNotFound(false)
       }
 
     })
@@ -65,7 +67,12 @@ export default function Product() {
   return(
     <>
     <Navbar/>
-    <div className="p-10 mt-16">
+    <div className={`${notFound ? "h-screen" : "hidden"} px-10 flex flex-col gap-4 justify-center items-center`}>
+    <h1 className="text-5xl text-footer font-bold">Artículo no encontrado</h1>
+    <h2 className="text-xl">No hemos podido encontrar este artículo en la tienda</h2>
+    <Link href="/shop" className="mt-10 text-white bg-button hover:shadow-lg transition-all duration-200 py-2 w-full text-center max-w-52 rounded-sm font-medium">Volver a la tienda</Link>
+    </div>
+    <div className={`p-10 mt-16 ${notFound ? "hidden" : ""}`}>
       <h2 className="text-footer text-2xl sm:text-3xl font-bold">{product.name}</h2>
       <div className="w-full flex flex-col md:flex-row mt-10">
         <div className="flex flex-col md:w-2/4">
