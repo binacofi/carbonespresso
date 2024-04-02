@@ -20,8 +20,8 @@ body {
 }
 
 #demo-view {
-  background-image: linear-gradient(to right bottom, rgba(254,254,254,0.1),rgba(238, 238, 238,0.2)), url("/ss.png");
-  background-position: center;
+  background-image: linear-gradient(to right bottom, rgba(254,254,254,0.3),rgba(238, 238, 238,0.3)), url("/ss.png");
+  background-position: top;
   background-size: cover;
   background-repeat: no-repeat;
 }
